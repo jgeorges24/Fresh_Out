@@ -1,0 +1,2 @@
+class TapesController < ApplicationController
+end
