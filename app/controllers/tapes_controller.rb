@@ -30,6 +30,25 @@ class TapesController < ApplicationController
 
     end
 
+    def edit
+
+        @tape = Tape.find_by(id: params[:id])
+
+    end
+
+    def update
+
+        @tape = Tape.find_by(id: params[:id])
+        @tape.update(tape_params)
+
+        if @tape.valid?
+            redirect_to tape_path(@tape)
+        end
+
+    end
+
+
+
     private
     #stronger params
     def tape_params
