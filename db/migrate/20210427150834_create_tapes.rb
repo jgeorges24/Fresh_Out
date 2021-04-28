@@ -3,10 +3,10 @@ class CreateTapes < ActiveRecord::Migration[6.1]
     create_table :tapes do |t|
       t.string :title
       t.string :artist
-      t.integer :tracks
+      t.integer :tracks, default: 0
       t.string :genre
       t.string :artcover
-      t.integer :likes
+      t.integer :likes, default: 0
       t.string :genre
       t.string :features
 

@@ -47,6 +47,13 @@ class TapesController < ApplicationController
 
     end
 
+    def destroy 
+        @tape = Tape.find_by(id: params[:id])
+        @tape.destroy
+        redirect_to tapes_path
+
+    end
+
 
 
     private
