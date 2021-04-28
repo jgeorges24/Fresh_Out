@@ -20,6 +20,7 @@ class UsersController < ApplicationController
                 redirect_to users_path
             else
                 render :new
+                #flash[:notice] = "username is not proper"
             end
     end
 

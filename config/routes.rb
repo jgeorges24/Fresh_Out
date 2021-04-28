@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
   
+#handles the registration of a user
+
+   get '/signup', to: 'user#new'
+   post '/signup', to: 'users#create'
+
+  #handles the seessions log in
+   get '/login', to: 'sessions#new'
+   post '/login' to: 'sessions#create'
+
+
+
   resources :tapes do 
     resources :opinions #might make it a create and destroy only so add only: [:create, :edit]
   end
