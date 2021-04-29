@@ -1,12 +1,16 @@
 <H1> Edit Your Tape </H1>
 
 
-#<%= form_with(model: @tape) do |f| %>
-    #<%= f.label :title %>
-    #<%= f.text_field :title %>
-    #<%= f.submit 'Update Mixtape' %>
+<%= form_with(model: @tape) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %> <br>
+    
+    <%= f.label :artist %> <br>
+    <%= f.text_field :artist %>
 
-#<% end %>
+    <%= f.submit 'Change Mixtape' %>
+
+
+<% end %>
 
     #<%= link_to "Remove Mixtape", tape_path(@tape), method: "delete" %>
-    

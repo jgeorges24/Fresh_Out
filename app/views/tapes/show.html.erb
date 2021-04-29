@@ -12,3 +12,13 @@
 
 #<%= link_to 'Mixtape List', tapes_path %>
 #<%= link_to 'Change Mixtape', edit_tape_path(@tape)
+
+
+# add the opinions on this page below
+
+#this is nested resources so we have to define this on the controller page using the build method.
+<%= form_with (model: [@image, @opinion]) do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.text_area :context %>
+    <%= f.submit :opinion %>
+<% end %>
