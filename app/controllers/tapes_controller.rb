@@ -25,7 +25,7 @@ class TapesController < ApplicationController
         if @tape.save
             redirect_to tape_path(@tape)
         else
-
+            #ADD FLASH MESSAGE
             render :new
 
         end
@@ -57,7 +57,11 @@ class TapesController < ApplicationController
 
     end
 
+    def home
 
+
+
+    end  
 
     private
     #stronger params

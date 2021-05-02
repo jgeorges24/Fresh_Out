@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   
 #handles the registration of a user
 
-   get '/signup', to: 'user#new'
+   get '/signup', to: 'users#new'
    post '/signup', to: 'users#create'
 
   #handles the seessions log in
-  #  get '/login', to: 'sessions#new'
-  #  post '/login' to: 'sessions#create'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 
+  #homepage static element/page
+  root('tapes#home')
 
 
   resources :tapes do 

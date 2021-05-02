@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
-
-
     def index 
-        @user = User.find_by(id: session[:user_id] )
-
+        @users = User.all
     end
 
+    def show 
+        @user = User.find_by(id: session[:user_id] )
+    end
 
     def new
         @user = User.new
@@ -25,11 +25,10 @@ class UsersController < ApplicationController
             end
     end
 
-    def
 
-private
-def user_params
-    params.require(:user).permit(:name, :username, :password, :email)
-end
+    private
+    def user_params
+        params.require(:user).permit(:name, :username, :password, :email)
+    end
 
 end
