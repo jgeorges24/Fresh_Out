@@ -66,6 +66,6 @@ class TapesController < ApplicationController
     private
     #stronger params
     def tape_params
-        params.require(:tape).permit(:title, :artist, :genre, :artcover, :features)
+        params.require(:tape).permit(:title, :artist, :features, :artcover,)
     end
 end

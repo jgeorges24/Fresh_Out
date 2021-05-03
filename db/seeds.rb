@@ -25,5 +25,5 @@ tapes.times do
     puts "-----------------"
     count += 1
     puts "#{count/tapes.to_f*100}%"
-    Tape.create(created_at: (0..30).to_a.sample.days.ago, artcover: "https://loremflickr.com/320/240?random=#{(0...999).to_a.sample}", title: Faker::Tape.title, artist: Faker::Tape.artist, features: Faker::Lorem.paragraph(sentence_count: 1, supplemental: false, random_sentences_to_add: 2))
+    tap = Tape.create(created_at: (0..30).to_a.sample.days.ago, artcover: "https://loremflickr.com/320/240?random=#{(0...999).to_a.sample}", title: Faker::tap.title, artist: Faker::tap.artist, features: Faker::Lorem.paragraph(sentence_count: 1, supplemental: false, random_sentences_to_add: 2))
 end
