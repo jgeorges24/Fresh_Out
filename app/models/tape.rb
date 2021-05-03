@@ -19,4 +19,9 @@ class Tape < ApplicationRecord
         self.where("title like %?%")
 
     end
+
+    #date object for upload date 
+    def uploaded_at
+        self.created_at.to_date
+    end
 end
