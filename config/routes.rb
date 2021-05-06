@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
+
+  #handles log out
+
+  delete '/logout', to: "sessions#logout"
+
+
   #homepage static element/page
   root('tapes#home')
 

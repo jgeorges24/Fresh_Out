@@ -1,29 +1,22 @@
-<h1> show page </h1>
+<h1> MixTape Show Page </h1>
 
 
 
 <h1><%= @tape.title %></h1>
 
 <div>
-   
-#all of the attributes you want to show on this show page put into here 
-    <p> <%= @tape.upload_at %> </p>
+    #all of the attributes you want to show on this show page put into here 
+    <p> <%= @tape.artist %> </p>
     <p> <%= @tape.features %> </p>
-    <p> <%= @tape.likes %> </p>
+    <p> <%= @tape.genre %> </P>
     <p> <%= @tape.tracks %> </P>
+    <p> <%= @tape.uploaded_at %> </p>
 </div>
+--------------------------------------------------------
+<br>
 
-#navigation buttons below to go back or edit goes below
-
-<%= link_to 'Mixtape List', tapes_path %>
-<%= link_to 'Change Mixtape', edit_tape_path(@tape)
-
-
+<%= link_to 'Edit Current Mixtape', edit_tape_path(@tape) %>
+<br>
+<%= link_to 'View Mixtape List', tapes_path %> 
+<br>
 # add the opinions on this page below
-
-#this is nested resources so we have to define this on the controller page using the build method.
-<%= form_with (model: [@tape, @opinion]) do |f| %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.text_area :context %>
-    <%= f.submit :opinion %>
-<% end %>

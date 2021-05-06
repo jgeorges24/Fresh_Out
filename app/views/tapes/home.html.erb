@@ -1,1 +1,10 @@
-<h1> home poage </h1>
+<h1> MIXTAPE home page </h1>
+
+<ul>
+<% @tapes.each do |tap| %>
+    <li> <%= link_to(tap.title, tape_path(tap)) %> </li>
+    
+<% end %>
+
+
+</ul>

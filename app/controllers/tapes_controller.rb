@@ -7,7 +7,7 @@ class TapesController < ApplicationController
     def show
         @tape = Tape.find_by(id: params[:id])
         #this is here to define to opinions section on the tape.rb
-        @opinion = @tape.opinion.build
+        @opinion = @tape.opinions.build
         #might add likes on this page or views  
     end
 
@@ -18,7 +18,10 @@ class TapesController < ApplicationController
     end
 
     def create
-        @tape = Tape.new(tape_params)
+        #@tape = Tape.new(tape_params)
+        
+        @tape = current_user.created_tapes.build(tape_params)
+        
         if @tape.save
             redirect_to tape_path(@tape)
         else
@@ -55,6 +58,7 @@ class TapesController < ApplicationController
     end
 
     def home
+        @tapes = Tape.all
     end  
 
     private
