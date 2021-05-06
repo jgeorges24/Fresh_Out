@@ -5,12 +5,10 @@ class TapesController < ApplicationController
     end
 
     def show
-
         @tape = Tape.find_by(id: params[:id])
         #this is here to define to opinions section on the tape.rb
         @opinion = @tape.opinion.build
-        #might add likes on this page or views
-        
+        #might add likes on this page or views  
     end
 
     def new
@@ -20,17 +18,16 @@ class TapesController < ApplicationController
     end
 
     def create
-        
         @tape = Tape.new(tape_params)
         if @tape.save
             redirect_to tape_path(@tape)
         else
+            flash[:message] = @tape.errors.full_messages.to_sentence 
             #ADD FLASH MESSAGE
             render :new
+            #render vs redirect??? 
 
         end
-
-
     end
 
     def edit
@@ -58,14 +55,11 @@ class TapesController < ApplicationController
     end
 
     def home
-
-
-
     end  
 
     private
     #stronger params
     def tape_params
-        params.require(:tape).permit(:title, :artist, :features, :artcover,)
+        params.require(:tape).permit(:title, :artist, :features, :artcover, :genre)
     end
 end

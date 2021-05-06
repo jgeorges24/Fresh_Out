@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
      else
         flash[:message] = "login not good"
-        
+        @user = User.new
         render :new
      end
 

@@ -16,7 +16,7 @@ class OpinionsController < ApplicationController
     private
     #Strongest params to keep uneeded requests
     def opinion_params
-        params.require(:opinion).permit(:context, :artcover, :user_id)
+        params.require(:opinion).permit(:context, :user_id)
     end
 
 
