@@ -1,15 +1,19 @@
-<h1> MixTape Show Page </h1>
+<h1> Created MixTape Show Page </h1>
 
+ <h4> below is your created mixtape </h4>
 
+ <div>
+    
+    <h1><%= @tape.title %></h1>
+    
 
-<h1><%= @tape.title %></h1>
-
-<div>
-    #all of the attributes you want to show on this show page put into here 
-    <p> <%= @tape.artist %> </p>
-    <p> <%= @tape.features %> </p>
-    <p> <%= @tape.genre %> </P>
-    <p> <%= @tape.tracks %> </P>
+    
+    <p> artist: <%= @tape.artist %> </p>
+    
+    <p>features: <%= @tape.features %> </p>
+    
+    <p> genre: <%= @tape.genre %> </P>
+    
     <p> <%= @tape.uploaded_at %> </p>
 </div>
 --------------------------------------------------------
@@ -20,3 +24,15 @@
 <%= link_to 'View Mixtape List', tapes_path %> 
 <br>
 # add the opinions on this page below
+
+<%= form_with(model:[@tape, @opinion]) do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :tape_id, value: @tape.id %>
+    <%= f.text_area :context %>
+    <%= f.submit :opinions %>
+<% end %>
+
+OPNIONS:
+<ul>
+<%= render @opinions %>
+</ul>

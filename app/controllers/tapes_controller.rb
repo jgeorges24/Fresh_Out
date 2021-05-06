@@ -7,8 +7,10 @@ class TapesController < ApplicationController
     def show
         @tape = Tape.find_by(id: params[:id])
         #this is here to define to opinions section on the tape.rb
-        @opinion = @tape.opinions.build
+        @opinions = @tape.opinions
+        @opinion = Opinion.new
         #might add likes on this page or views  
+        
     end
 
     def new
