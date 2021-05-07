@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
     get '/signup', to: 'users#new'
     post '/signup', to: 'users#create'
-    
+
     #handles the seessions log in
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
 
     resources :tapes do 
-      resources :opinions #might make it a create and destroy only so add only: [:create, :edit]
+      resources :opinions, only: [:create, :edit, :delete]
     end
 
     resources :users

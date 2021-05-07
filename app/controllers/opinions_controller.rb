@@ -1,5 +1,5 @@
 class OpinionsController < ApplicationController
-
+    before_action :redirect_if_not_logged, only: [:create]
     def create
         @tape = Tape.find_by_id(params[:tape_id])
         @opinion = @tape.opinions.build(opinion_params)
@@ -13,8 +13,8 @@ class OpinionsController < ApplicationController
 
     end
 
-    def delete
-        @tape = Tape.find_by_id(params[:tape_id])
+    def destroy
+        #@tape = Tape.find_by_id(params[:tape_id])
         @opinion = @tape.opinions.build(opinion_params)
         @opinion.destroy
         redirect_to tape_path(@tape)

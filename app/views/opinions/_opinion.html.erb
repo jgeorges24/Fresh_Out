@@ -1,4 +1,5 @@
 <li>
 <%= opinion.user.name %> - 
  <%= opinion.context %><br>
+ <%= link_to 'remove', tape_path(@tape), method: "delete" %>
 </li>

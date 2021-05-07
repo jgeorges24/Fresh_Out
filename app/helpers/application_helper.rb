@@ -13,4 +13,13 @@ module ApplicationHelper
     def logged_out?
         !current_user
     end
+
+    def redirect_if_not_logged
+        redirect_to login_path if !logged_in?
+    end
+
+    def redirect_if_logged
+        redirect_to tapes_path if logged_in?
+    end
+    
 end

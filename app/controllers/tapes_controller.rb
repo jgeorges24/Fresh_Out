@@ -1,4 +1,6 @@
 class TapesController < ApplicationController
+    before_action :redirect_if_not_logged, only: [:new, :create, :edit, :update, :index, :home]
+
 
     def index
         @tapes = Tape.all
