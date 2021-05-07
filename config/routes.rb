@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
     delete '/logout', to: "sessions#logout"
 
+    #ominauth
+    get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
     #homepage static element/page
     root('tapes#home')
