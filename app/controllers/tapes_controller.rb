@@ -19,21 +19,22 @@ class TapesController < ApplicationController
 
     end
 
-    def create
-        #@tape = Tape.new(tape_params)
-        
-        @tape = current_user.created_tapes.build(tape_params)
-        
-        if @tape.save
-            redirect_to tape_path(@tape)
-        else
-            flash[:message] = @tape.errors.full_messages.to_sentence 
-            #ADD FLASH MESSAGE
-            render :new
-            #render vs redirect??? 
 
+        def create
+            #@tape = Tape.new(tape_params)
+            
+            @tape = current_user.created_tapes.build(tape_params)
+            
+            if @tape.save
+                redirect_to tape_path(@tape)
+            else
+                flash[:message] = @tape.errors.full_messages.to_sentence 
+                #ADD FLASH MESSAGE
+                render :new
+                #render vs redirect??? 
+
+            end
         end
-    end
 
     def edit
 

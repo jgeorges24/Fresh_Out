@@ -20,6 +20,8 @@ class UsersController < ApplicationController
                 session[:user_id] = @user.id
                 redirect_to tapes_path
             else
+                flash[:message] = @user.errors.full_messages.to_sentence
+                #flash[:message] = "missing info"
                 render :new
                 #flash[:notice] = "username is not proper"
             end
