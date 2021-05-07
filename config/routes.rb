@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
 
     resources :tapes do 
-      resources :opinions, only: [:create, :edit, :delete]
+      resources :opinions
     end
 
     resources :users
