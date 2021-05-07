@@ -1,3 +1,36 @@
-# Fresh_Out
-Work in progress
-In need of deep support and assistance from anyone willing to help.
+Fresh_Out Rails Web App.
+
+Have you ever weanted to let the world know about your mixtape coming out and wanted an honest opinion, well now you canm by signing up and uploading that information to the web app and watch as users can share their opinion about your mixtape.
+Fresh Out A WEB APP/DEMO
+
+#FORK CLONE github Instructions
+
+Fork and clone this repo. open it in VS code and type "bundle install" to make sure you have those gems installed and right after lets make sure we run "rails s". lets then open our broswer to "http://127.0.0.1:3000"
+
+#Contributing
+
+JEAN GEORGES and open for more support and asstiance.
+
+#USAGE
+
+SIGN UP PAGE
+
+     def create 
+
+        @user = User.new(user_params)
+            if @user.save
+                flash[:message] = "Sign Up Success!"
+                session[:user_id] = @user.id
+                redirect_to tapes_path
+            else
+                flash[:message] = @user.errors.full_messages.to_sentence
+                #flash[:message] = "missing info"
+                render :new
+                #flash[:notice] = "username is not proper"
+            end
+    end
+#Code Of Conduct
+
+Play nice you know right from wrong, so lets contribute peacfully and no negative vibes. use code respecfully.
+
+#LICESNE MIT
