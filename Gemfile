@@ -59,3 +59,4 @@ gem "faker", "~> 2.17"
 
 gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"

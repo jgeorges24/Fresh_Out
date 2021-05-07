@@ -34,9 +34,19 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        binding.pry
-
+        @user = User.find_or_create_by(username: auth[:info][:]) do |u|
+            u.email = auth[:info][:email]
+            u.username = auth[:info][:email]
+            u.name = auth[:info][:name]
+            u.uid = auth[:uid]
+            u.provider = auth[:provider]
+        end
     end
 
+    private
+
+    def auth
+        request.env['omniauth.auth']
+    end
 
 end
