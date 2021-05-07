@@ -17,6 +17,7 @@ class OpinionsController < ApplicationController
         @tape = Tape.find_by_id(params[:tape_id])
         @opinion = @tape.opinions.find(params[:id])
         @opinion.destroy
+        flash[:message] = "opinion removed"
         redirect_to tape_path(@tape)
 
     end
