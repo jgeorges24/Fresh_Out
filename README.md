@@ -3,13 +3,15 @@ Fresh_Out Rails Web App.
 Have you ever weanted to let the world know about your mixtape coming out and wanted an honest opinion, well now you canm by signing up and uploading that information to the web app and watch as users can share their opinion about your mixtape.
 Fresh Out A WEB APP/DEMO
 
-#FORK CLONE github Instructions
+#Installation Guide 
+fork and clone repo, bundle install, run rails s in terminal, use broswer to navigate to local host http://127.0.0.1:3000/
+
 
 Fork and clone this repo. open it in VS code and type "bundle install" to make sure you have those gems installed and right after lets make sure we run "rails s". lets then open our broswer to "http://127.0.0.1:3000"
 
 #Contributing
 
-JEAN GEORGES and open for more support and asstiance.
+JEAN GEORGES and open for more support and asstiance. If any issue file one using a pull request.
 
 #USAGE
 
@@ -34,3 +36,5 @@ SIGN UP PAGE
 Play nice you know right from wrong, so lets contribute peacfully and no negative vibes. use code respecfully.
 
 #LICESNE MIT
+
+This project has been licensed under the MIT open source license
