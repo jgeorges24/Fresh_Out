@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :tapes, through: :opinions
 
   validates :username, presence: true, uniqueness: true
-  validates :password, presence: true, length: { in: 8..15}
-  validates :name, presence: true, length: { minimum: 2}
+  validates :password, presence: true, length: { in: 5..30}
+  validates :name, presence: true #length: { minimum: 2}
   #validates other things too with user
 end

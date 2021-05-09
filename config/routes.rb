@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
 
+    #get '/tapes/user', to: 'user#show'
 
     #handles log out
 
@@ -20,11 +21,17 @@ Rails.application.routes.draw do
     #homepage static element/page
     root('tapes#home')
 
+    #search
+    get '/search', to: 'tapes#search', as: 'search'
+
+    
+    resources :users 
 
     resources :tapes do 
       resources :opinions
+      get '/user', to: 'users#show'
+      
     end
 
-    resources :users
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

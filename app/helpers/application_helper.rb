@@ -21,5 +21,16 @@ module ApplicationHelper
     def redirect_if_logged
         redirect_to tapes_path if logged_in?
     end
-    
+
+    #helper to disinguish if its the mixtape creator or not
+    def mixtape_true_creator
+
+        @current_user == @tape.user
+
+    end
+    def not_mixtape_true_creator
+
+        @current_user != @tape.user
+
+    end
 end

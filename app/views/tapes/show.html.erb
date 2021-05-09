@@ -1,6 +1,14 @@
 <h1> Created MixTape Show Page </h1>
 
- <h4> below is your created mixtape </h4>
+<div> 
+<H4> UPLOADED BY </H4>
+
+<p> USERNAME: <%=link_to @tape.user.name, user_path %> </p>
+
+</div>
+
+--------------------------------------------------------
+<br>
 
  <div>
     
@@ -19,8 +27,13 @@
 --------------------------------------------------------
 <br>
 
+
+<% if mixtape_true_creator%>
 <%= link_to 'Edit Mixtape', edit_tape_path(@tape) %>
+<% end %>
+
 <br>
+
 <%= link_to 'View All Mixtapes', tapes_path %> 
 <br>
 # add the opinions on this page below

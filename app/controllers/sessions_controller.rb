@@ -46,6 +46,7 @@ class SessionsController < ApplicationController
             flash[:message] = "signed in via Google"
             session[:user_id] = @user.id
             redirect_to tapes_path
+
         else
             flash[:message] = "bad credientials, check again or sign up!"
             redirect_to login_path
