@@ -16,9 +16,16 @@ class Tape < ApplicationRecord
     #FIX THIS SEARCH METHOD
     def self.search(query)
 
-        self.where("title like %?%")
+        self.where("title like %?%", query)
 
     end
+
+    def self.recent_tape
+
+        self.order(created_at: :desc)
+
+    end
+
 
     #date object for upload date 
     def uploaded_at

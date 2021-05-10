@@ -24,7 +24,9 @@ Rails.application.routes.draw do
     #search
     get '/search', to: 'tapes#search', as: 'search'
 
-    
+    get '/recent_tape', to: 'tapes#recent_tape'
+
+
     resources :users 
 
     resources :tapes do 

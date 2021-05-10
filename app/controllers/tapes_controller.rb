@@ -67,6 +67,12 @@ class TapesController < ApplicationController
             @tapes = Tape.all
         end  
 
+        def recent_tape
+
+            @tapes = Tape.recent_tape
+
+        end
+
         private
         #stronger params
         def tape_params

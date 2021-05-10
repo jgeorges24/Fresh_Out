@@ -1,10 +1,12 @@
-<h1> all tapes </h1>
+<h1> index page all tapes </h1>
 
-
+<div>
+<H1> WELCOME BACK: <%= @current_user.name %> </H1>
+</div>
 
 <ul>
 <% @tapes.each do |tap| %>
-    <li> <%= link_to(tap.title, tape_path(tap)) %> </li>
+    <li> <%= link_to(tap.title, tape_path(tap)) %> - created by: <%=tap.user.name %> <br> uploaded - <%=tap.uploaded_at %> </li>
     
 <% end %>
 

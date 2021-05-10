@@ -1,0 +1,10 @@
+<h1> The Recent MIXTAPES THAT CAME OUT DESCENDING ORDER </h1>
+
+<ul>
+<% @tapes.each do |tap| %>
+    <li> <%= link_to(tap.title, tape_path(tap)) %> - created by: <%=tap.user.name %> <br> uploaded - <%=tap.updated_at %> </li>
+    
+<% end %>
+
+
+</ul>
