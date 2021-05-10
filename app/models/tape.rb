@@ -14,17 +14,23 @@ class Tape < ApplicationRecord
     #Create a search class method for this Tape object so we can query with active record when finding these different mixtapes
 
     #FIX THIS SEARCH METHOD
-    def self.search(query)
+    # def self.search(query)
 
-        self.where("title like ?", "%#(query)%")
+    #     self.where("title like ?", "%#(query)%")
 
-    end
+    # end
 
-    def self.recent_tape
+    #scope method to chain the sql and ruby together easier to grab data
+    scope :search, -> (query) {self.where("title LIKE ?", "%#(query)%") }
 
-        self.order(created_at: :desc)
 
-    end
+    #scope :most_recent, -> {order created_at: :desc}
+
+      def self.recent_tape
+
+          self.order(created_at: :desc)
+
+      end
 
 
     #date object for upload date 
