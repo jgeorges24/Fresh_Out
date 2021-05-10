@@ -12,60 +12,7 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/login">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          
-          <% if logged_in? %>
-            <li class="nav-item">
-              <%= link_to 'home', root_path, class: 'nav-link active' %>
-            </li>
-
-              <li>
-                <%= link_to 'Create Mixtape', new_tape_path, class: 'nav-item' %> 
-              </li>
-              <li>
-                <%= link_to 'Recent Release', recent_tape_path, class: 'nav-item' %> 
-              </li>
-             
-              <li class="nav-item">
-              <%= link_to 'logout', logout_path, method: "delete" %> 
-              </li>
-            
-              
-              </ul>
-              <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            <% end %>
-            
-            <% if logged_out? %>
-
-              <li class="nav-item">
-                <%= link_to 'login', login_path %> 
-              </li>
-              <li class="nav-item">
-                <%= link_to 'register', signup_path %> 
-              </li>
-              <li class="nav-item">
-                <%= link_to 'Google Sign Up', "/auth/google_oauth2", method: "post" %> 
-              </li>
-            <% end %>
-          
-        </div>
-      </div>
-    </nav>
-
-
-
-
-
+  <%= render(partial:"layouts/nav")%>
   <%= flash[:message] if flash[:message]%>
   <%= yield %>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

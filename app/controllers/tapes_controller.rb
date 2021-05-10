@@ -73,9 +73,22 @@ class TapesController < ApplicationController
 
         end
 
+        def search
+            @tapes = Tape.all
+            Tape.search(params[:title])
+            
+            
+        end
+
         private
         #stronger params
         def tape_params
             params.require(:tape).permit(:title, :artist, :features, :artcover, :genre)
         end
-end
+
+        def current_user
+
+            @current_user ||= User.find_by_id(session[:user_id])
+    
+        end
+    end

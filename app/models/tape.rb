@@ -16,7 +16,7 @@ class Tape < ApplicationRecord
     #FIX THIS SEARCH METHOD
     def self.search(query)
 
-        self.where("title like %?%", query)
+        self.where("title like ?", "%#(query)%")
 
     end
 

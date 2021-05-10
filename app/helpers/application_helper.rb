@@ -6,6 +6,8 @@ module ApplicationHelper
 
     end
 
+
+
     def logged_in?
         !!current_user
     end
@@ -33,4 +35,10 @@ module ApplicationHelper
         @current_user != @tape.user
 
     end
+    
+
+
+
 end
+
+
