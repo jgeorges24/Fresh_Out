@@ -16,12 +16,12 @@ class Tape < ApplicationRecord
     #FIX THIS SEARCH METHOD
      #def self.search(query)
 
-    #     self.where("title like ?", "%#(query)%")
+    #     self.where("title like ?", "%#{query}%")
 
     # end
 
     #scope method to chain the sql and ruby together easier to grab data
-    scope :search, -> (query) {self.where("title LIKE ?", "%#{query}%") }
+    scope :search, -> (query) {where("title LIKE ?", "%#{query}%") }
 
 
     #scope :most_recent, -> {order created_at: :desc}
@@ -32,6 +32,7 @@ class Tape < ApplicationRecord
 
       end
 
+      #scope :uploaded_at, -> {created_at.to_date :desc}
 
     #date object for upload date 
     def uploaded_at
