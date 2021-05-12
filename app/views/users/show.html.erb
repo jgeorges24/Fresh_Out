@@ -4,4 +4,10 @@
 
 <H1> USERNAME: <%=@user.username %> </H1>
 
+<div>
+<H1> TAPES: <% @tapes.current_user.each do |t| %>
+        <li> <%= link_to(t.title, tape_path(t))
+    <% end %>
+
+</div>
 

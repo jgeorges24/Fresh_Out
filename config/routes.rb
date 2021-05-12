@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
     get '/recent_tape', to: 'tapes#recent_tape'
 
-    get '/user', to: 'users#show'
+    #get '/users', to: 'users#show'
 
     resources :users 
 

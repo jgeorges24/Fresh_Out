@@ -3,7 +3,7 @@
 <div> 
 <H4> UPLOADED BY </H4>
 
-<p> USERNAME: <%=link_to @tape.user.name, user_path %> </p>
+<p> USERNAME: <%=link_to @tape.user.name, user_path(current_user) %> </p>
 
 </div>
 

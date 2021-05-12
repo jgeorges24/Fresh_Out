@@ -7,8 +7,11 @@ class UsersController < ApplicationController
     end
 
     def show 
-        @user = current_user
-        
+        @user = User.find_by(username: params[:user][:username])
+        #@user = current_user
+        #@current_user
+        @tapes = user.tapes
+        @opinions = user.opinions
     end
 
     def new

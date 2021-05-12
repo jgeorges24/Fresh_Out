@@ -39,7 +39,7 @@ module ApplicationHelper
     
 
     def tape_Opinion_count
-
+        
         Tape.opinions.count
 
     end
