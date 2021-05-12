@@ -1,6 +1,6 @@
 <ul>
 <% @tapes.each do |tap| %>
-    <li> <%= tap.title %> </li>
+    <li> <%= link_to tap.title, tap %> </li>
     
 <% end %>
 

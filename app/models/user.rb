@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :created_tapes, foreign_key: "user_id", class_name: "Tape"
   has_many :opinions
+
+  
   has_many :tapes, through: :opinions
 
   validates :username, presence: true, uniqueness: true

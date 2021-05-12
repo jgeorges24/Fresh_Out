@@ -1,10 +1,13 @@
 class TapesController < ApplicationController
     before_action :redirect_if_not_logged, only: [:new, :create, :edit, :update, :index, :home]
-  
+
+    before_action :not_mixtape_true_creator, only: [:edit, :update]
+    
+    
 
 
         def index
-            @tapes = Tape.all
+            @tapes = Tape.includes(:user)
         end
 
         def show
@@ -40,7 +43,7 @@ class TapesController < ApplicationController
         end
 
         def edit
-
+        
             @tape = Tape.find_by(id: params[:id])
 
         end
@@ -74,11 +77,10 @@ class TapesController < ApplicationController
         end
 
         def search
-            @tapes = Tape.all
-            Tape.search(params[:title])
-            
-            
+            #@tapes = Tape.all
+            @tapes = Tape.search(params[:title])
         end
+
 
         private
         #stronger params

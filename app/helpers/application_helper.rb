@@ -26,16 +26,23 @@ module ApplicationHelper
 
     #helper to disinguish if its the mixtape creator or not
     def mixtape_true_creator
-
+        @tape = Tape.find_by(id: params[:id])
         @current_user == @tape.user
 
     end
     def not_mixtape_true_creator
-
+        @tape = Tape.find_by(id: params[:id])
         @current_user != @tape.user
+        redirect_to tapes_path(@tape)
 
     end
     
+
+    def tape_Opinion_count
+
+        Tape.opinions.count
+
+    end
 
 
 

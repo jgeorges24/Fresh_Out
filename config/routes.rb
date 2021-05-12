@@ -26,12 +26,12 @@ Rails.application.routes.draw do
 
     get '/recent_tape', to: 'tapes#recent_tape'
 
+    get '/user', to: 'users#show'
 
     resources :users 
 
     resources :tapes do 
-      resources :opinions
-      get '/user', to: 'users#show'
+      resources :opinions#, shallow: true
       
     end
 

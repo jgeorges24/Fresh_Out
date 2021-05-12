@@ -23,6 +23,20 @@ class OpinionsController < ApplicationController
 
     end
 
+    #new methods from review
+    def opinion_count
+
+        Opinion.group(:tape_id).count
+        Opinion.group(:tape_id).count.max_by{|k, v| v }
+        Opinion.group(:tape_id).count.max
+
+    end
+
+    def show
+        #must have show method to show use of has many through method
+
+    end
+
     private
     #Strongest params to keep uneeded requests
     def opinion_params
