@@ -2,6 +2,10 @@
 <br>
 <div>
 <H1> WELCOME BACK: <%= @current_user.name %> </H1>
+ <% @current_user.tapes.each do |you| %> 
+    <li> <%= you.title %> </li>
+    <li> <%= you.opinions.count %> </li>
+    <% end %>
 </div>
 
 <br>

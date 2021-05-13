@@ -54,3 +54,9 @@ add the model Favorite and all the new associations: the tape/user has many favo
         Opinion.group(:tape_id).count.max
 
     end
+
+
+    
+    must be able to get tpo this url
+
+    http://localhost:3000/tapes/27/opinions

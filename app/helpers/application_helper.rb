@@ -40,7 +40,7 @@ module ApplicationHelper
     def my_opinion
         @tape = Tape.find_by(id: params[:tape_id])
         #binding.pry
-        @current_user.opinions.includes?() == @tape.opinions
+        @current_user.opinions.include?("") #== @tape.opinions
 
         # @tapes = user.tapes
         # @opinions = user.opinions
@@ -50,14 +50,18 @@ module ApplicationHelper
     
 def not_user_opinion
     @tape = Tape.find_by(id: params[:tape_id])
-    @current_user.opinions != @tape.opinions
+    if @current_user.opinions != @tape.opinions
+    flash[:message] = "opinion NOT yours"
+
     redirect_to tape_path(@tape)
+    else
+        flash[:message] = "opinion deleted"
+    end   
 end
 
     def true_user_opinion
-
-        
-
+        @tape = Tape.find_by(id: params[:tape_id])
+        @current_user.opinions == @tape.opinions
     end
 
     def tape_Opinion_count
