@@ -36,11 +36,33 @@ module ApplicationHelper
         redirect_to tapes_path(@tape)
 
     end
+
+    def my_opinion
+        @tape = Tape.find_by(id: params[:tape_id])
+        #binding.pry
+        @current_user.opinions.includes?() == @tape.opinions
+
+        # @tapes = user.tapes
+        # @opinions = user.opinions
+        # @tape = Tape.find_by_id(params[:tape_id])
+        # @opinion = @tape.opinions.find(params[:id])
+    end
     
+def not_user_opinion
+    @tape = Tape.find_by(id: params[:tape_id])
+    @current_user.opinions != @tape.opinions
+    redirect_to tape_path(@tape)
+end
+
+    def true_user_opinion
+
+        
+
+    end
 
     def tape_Opinion_count
-        
-        Tape.opinions.count
+        @tape = Tape.find_by(id: params[:id])
+        @tape.opinions.count
 
     end
 

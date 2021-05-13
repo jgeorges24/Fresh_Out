@@ -1,7 +1,7 @@
 class TapesController < ApplicationController
     before_action :redirect_if_not_logged, only: [:new, :create, :edit, :update, :index, :home]
 
-    before_action :not_mixtape_true_creator, only: [:edit, :update]
+    before_action :not_mixtape_true_creator, only: [:edit, :update, :destroy]
     
     
 
