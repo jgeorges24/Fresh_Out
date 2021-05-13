@@ -1,2 +1,7 @@
-<H1> Index page  </H1>
+<H1> Index page of <%= @tape.title + "'s" %> opinions </H1>
 
+<% @opinions.each do |x| %>
+
+<%= x.context %>
+
+<% end %>

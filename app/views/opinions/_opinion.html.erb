@@ -5,9 +5,6 @@
     <%= opinion.user.name %> - 
     <%= opinion.context %><br>
     <%= opinion.created_at%> <br>
-
-    <%= link_to 'remove', tape_opinion_path(opinion.tape, opinion), method: "delete" %>
-
-    
    
+    <%= link_to 'remove', tape_opinion_path(opinion.tape, opinion), method: "delete" %>  
 </li>
