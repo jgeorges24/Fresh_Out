@@ -11,7 +11,7 @@ class OpinionsController < ApplicationController
             redirect_to tape_path(@tape)
         else
             flash[:message] = "opinion NOT added"
-            redirect_to tape_path(@tape)
+            render :new
         end
     end
 
@@ -30,6 +30,14 @@ class OpinionsController < ApplicationController
         Opinion.group(:tape_id).count.max_by{|k, v| v }
         Opinion.group(:tape_id).count.max
 
+    end
+
+    def new
+        #binding.pry
+        
+        @opinion = Opinion.new
+        @tape = Tape.find_by_id(params[:tape_id])
+       
     end
 
     def index

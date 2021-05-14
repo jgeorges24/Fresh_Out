@@ -8,3 +8,12 @@
 
 
 <p> this is the opinion form page </p>
+
+
+<%= form_with(model:[@tape, @opinion]) do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :tape_id, value: @tape.id %>
+    <%= f.text_area :context %>
+    
+    <%= f.submit :opinion %>
+<% end %>

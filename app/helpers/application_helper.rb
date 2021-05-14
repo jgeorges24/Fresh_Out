@@ -61,7 +61,7 @@ end
 
     def true_user_opinion
         @tape = Tape.find_by(params[:tape_id])
-        @current_user == @tape.user1
+        @current_user == @tape.user
     end
 
     def tape_Opinion_count

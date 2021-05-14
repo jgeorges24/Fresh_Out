@@ -30,22 +30,6 @@ Matteo Piccini
 
 
 
-Matteo Piccini  3:53 PM
-
-create a join table favorites which joins tapes and users, and therefore needs the foreign keys tape_id and user_id
-
-add the model Favorite and all the new associations: the tape/user has many favorites, and many users/tapes through favorites.
-
- 3. Every tape, when displayed, should also have a button next to the tape name. The button should say something like Like or Unlike, depending if the user is already associated with that specific tape or not.
-
-4. When a user creates a tape, or when a user likes a tape, you can add the tape to the user's list: current_user.tapes << @tape. If they unlike the tape, then you have to remove it from the user's list: current_user.movies.delete(@tape)
-
-5. That would make sure that the user has many tapes (through favorites) and like/unlike them
-
-
-
-
-
     #new methods from review
     def opinion_count
 
