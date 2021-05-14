@@ -1,4 +1,4 @@
-<H1> NESTED OPINIONS FORM </H1>
+<H1> NESTED OPINIONS FORM </H1
 
 <br>
 
@@ -6,9 +6,4 @@
 <br>
 # add the opinions on this page below
 
-<%= form_with(model:[@tape, @opinion]) do |f| %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :tape_id, value: @tape.id %>
-    <%= f.text_area :context %>
-    <%= f.submit :opinion %>
-<% end %>
+

@@ -1,7 +1,9 @@
 <H1> Index page of <%= @tape.title + "'s" %> opinions </H1>
 
 <% @opinions.each do |x| %>
+ <%= x.user.name %> :
 
 <%= x.context %>
-
+<br>
 <% end %>
+<%= link_to 'back to tapes', tapes_path %>

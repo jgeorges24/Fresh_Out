@@ -50,7 +50,7 @@ module ApplicationHelper
     
 def not_user_opinion
     @tape = Tape.find_by(id: params[:tape_id])
-    if @current_user.opinions != @tape.opinions
+    if @current_user.opinions != @tape.user.opinions
     flash[:message] = "opinion NOT yours"
 
     redirect_to tape_path(@tape)
@@ -60,8 +60,8 @@ def not_user_opinion
 end
 
     def true_user_opinion
-        @tape = Tape.find_by(id: params[:tape_id])
-        @current_user.opinions == @tape.opinions
+        @tape = Tape.find_by(params[:tape_id])
+        @current_user == @tape.user
     end
 
     def tape_Opinion_count

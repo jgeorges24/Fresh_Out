@@ -1,9 +1,7 @@
 class OpinionsController < ApplicationController
     before_action :redirect_if_not_logged, only: [:create, :update, :destroy, :edit]
     
-    before_action :not_user_opinion, only: [:destroy]
-    
-    
+    #before_action :not_user_opinion, only: [:destroy]
     
     def create
         @tape = Tape.find_by_id(params[:tape_id])
@@ -39,13 +37,10 @@ class OpinionsController < ApplicationController
         @opinions = @tape.opinions
     end
 
-
     def show
         #must have show method to show use of has many through method
         @tape = Tape.find_by(id: params[:id])
-        
-        
-
+        @opinion = @tape.opinions.find_by(params [:tape_id])
     end
 
     private

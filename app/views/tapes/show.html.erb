@@ -3,7 +3,8 @@
 <div> 
 <H4> UPLOADED BY </H4>
 
-<p> USERNAME: <%=link_to @tape.user.name, user_path(current_user) %> </p>
+<p> USERNAME: <%=link_to @tape.user.name, user_path(
+    @current_user) %> </p>
 
 </div>
 
@@ -14,8 +15,6 @@
     
     <h1><%= @tape.title %></h1>
     
-
-    
     <p> artist: <%= @tape.artist %> </p>
     
     <p>features: <%= @tape.features %> </p>
@@ -25,7 +24,9 @@
     <p> <%= @tape.uploaded_at %> </p>
     
     <p> Number_of_Opinions: <%= @tape.opinions.count %> </p>
+     <%=link_to 'opinions list', tape_opinions_path(@tape) %>
 
+     <p> opinions nested forms page: <%=link_to 'nested opinions form', new_tape_opinion_path(@tape) %>  </p>
     
 </div>
 <br>
@@ -51,6 +52,5 @@
 
 OPINIONS:
 <ul>
-
-<%= render @opinions %>
+    <%= render @opinions %>
 </ul>
