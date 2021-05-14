@@ -1,24 +1,41 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fresh_Out Rails Web App.
 
-Things you may want to cover:
+Have you ever weanted to let the world know about your mixtape coming out and wanted an honest opinion, well now you canm by signing up and uploading that information to the web app and watch as users can share their opinion about your mixtape. Fresh Out A WEB APP/DEMO
 
-* Ruby version
+#Installation Guide fork and clone repo, bundle install, run rails s in terminal, use broswer to navigate to local host http://127.0.0.1:3000/
 
-* System dependencies
+Fork and clone this repo. open it in VS code and type "bundle install" to make sure you have those gems installed and right after lets make sure we run "rails s". lets then open our broswer to "http://127.0.0.1:3000"
 
-* Configuration
+#CONTRIBUTING
 
-* Database creation
+JEAN GEORGES and open for more support and asstiance. If any issue file one using a pull request.
 
-* Database initialization
+#USAGE
 
-* How to run the test suite
+user will be able to sign up, and log his/her mixtape with and watch other users leave opinions on the mixtape.
 
-* Services (job queues, cache servers, search engines, etc.)
+SIGN UP PAGE
 
-* Deployment instructions
+ def create 
 
-* ...
+    @user = User.new(user_params)
+        if @user.save
+            flash[:message] = "Sign Up Success!"
+            session[:user_id] = @user.id
+            redirect_to tapes_path
+        else
+            flash[:message] = @user.errors.full_messages.to_sentence
+            #flash[:message] = "missing info"
+            render :new
+            #flash[:notice] = "username is not proper"
+        end
+end
+#Code Of Conduct
+
+Play nice you know right from wrong, so lets contribute peacfully and no negative vibes. use code respecfully.
+
+#LICESNE MIT
+
+This project has been licensed under the MIT open source license
