@@ -25,7 +25,7 @@ class Tape < ApplicationRecord
 
 
     #scope :most_recent, -> {order created_at: :desc}
-
+    
       def self.recent_tape
 
           self.order(created_at: :desc)

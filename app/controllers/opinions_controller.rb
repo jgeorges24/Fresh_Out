@@ -4,13 +4,15 @@ class OpinionsController < ApplicationController
     #before_action :not_user_opinion, only: [:destroy]
     
     def create
+        #binding.pry
+
         @tape = Tape.find_by_id(params[:tape_id])
         @opinion = @tape.opinions.build(opinion_params)
         if @opinion.save
             flash[:message] = "opinion added"
             redirect_to tape_path(@tape)
         else
-            flash[:message] = "opinion NOT added"
+            flash[:message] = @opinion.errors.full_messages.to_sentence
             render :new
         end
     end
